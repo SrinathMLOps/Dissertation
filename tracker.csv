@@ -1,0 +1,10 @@
+Task,Supervisor,Description,Start Date,Due Date,Status,Notes
+Select Topic,Dr.Babak Jamshidi,Finalize research topic and title,,,Done,Has to be approved by supervisor
+Write Proposal,Dr.Babak Jamshidi,Write and submit dissertation proposal,,,Done,Uploaded as PROPOSAL.docx
+Collect Dataset,Dr.Babak Jamshidi,Download roulette_predictions.csv and clean it,,,Done,Added to GitHub
+Prepare Presentation,Dr.Babak Jamshidi,preparing the  slides for RL strategy findings,,,Done,Roulette_RL_Presentation.pptx
+Ethics submission,Dr.Babak Jamshidi,submitting the Ethichs,,,Done,
+Train PPO Model,Dr.Babak Jamshidi,Developed a PPO based agent and trained it using the previously created dataset,,,Done,Scaling and encoding pending
+Compare the performance of ppo with  strategies,Dr.Babak Jamshidi,For comparison we will use these algorithms and compare the performance of ppo with these strategies,,,In Progress,
+Write Dissertation,Dr.Babak Jamshidi,Prepare full dissertation report,,,In Progress,
+Final Submission,Dr.Babak Jamshidi,Submit all documents and presentation,,,In Progress,

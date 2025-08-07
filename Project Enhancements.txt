@@ -1,0 +1,117 @@
+Project Enhancement Notes 
+
+Algorithms.ipynb
+
+1. Enforced Realistic Betting Constraints
+Maximum Bet Limit
+Maximum Win Limit
+Maximum Loss Limit
+
+
+Maximum Bet Limit:
+
+self.current_bet = min(self.current_bet * 2, self.max_bet)
+
+
+
+Maximum Win Limit:
+
+self.total_profit >= self.max_win
+
+
+if self.env.total_profit >= self.env.max_win:
+    print("Terminated: Maximum winning limit reached.")
+
+
+Maximum Loss Limit:
+
+self.total_profit <= self.max_loss
+
+these simulate real casino rules and prevent unrealistic betting escalation in long-running episodes.
+
+
+
+2.Is the Average Loss per Spin Realistic?
+
+
+"There shouldn’t be so much difference between the average loss of the random agent and the Fibonacci agent"
+
+You calculated average loss per spin using:
+
+avg_rewards = {
+    k: (results[k] / rounds_played_dict[k]) if rounds_played_dict[k] > 0 else 0
+    for k in results.keys()
+}
+
+
+Used to compare betting strategies (PPO, DQN, Fibonacci, Martingale, etc.)
+
+Plotted in a bar chart to visualize losses per spin.
+
+
+
+
+DataGenerator.ipynb
+
+
+
+3. Chi-Square Goodness of Fit Test
+Check whether the simulated roulette data matches the real-world distribution of a European roulette wheel (Red, Black, Green proportions).
+
+
+from scipy.stats import chisquare
+
+# Expected probabilities
+expected_probs = [18/37, 18/37, 1/37]  # black, red, green
+observed_counts = df['Color'].value_counts().reindex(['black', 'red', 'green'], fill_value=0).values
+expected_counts = [p * len(df) for p in expected_probs]
+
+# Perform chi-square test
+chi2_stat, p_value = chisquare(f_obs=observed_counts, f_exp=expected_counts)
+print(f"\nChi-Square Statistic: {chi2_stat:.4f}")
+print(f"P-value: {p_value:.4f}")
+ # 🟢 IMPORTANT LINE ;This checks whether your simulation matches a real roulette wheel.
+if p_value < 0.05:
+    print("Roulette appears to be biased (statistically significant)")
+else:
+    print("Roulette appears fair (no significant bias)")
+
+
+
+Chi-Square Statistic: 0.4869
+P-value: 0.7839
+Roulette appears fair (no significant bias)
+
+This confirms that your simulated fair wheel behaves like real roulette.
+
+
+
+4. Threshold Check – Detecting Unrealistic Simulation Bias
+Chi-Square Statistic: The "distance" between observed and expected frequencies. Lower = better match.
+
+P-value: The probability that such differences happened just by chance.
+
+If p > 0.05 →  No statistically significant difference → simulation looks fair
+
+If p ≤ 0.05 →  Statistically significant difference → simulation is biased
+
+
+# Check for potential unrealistic distributions
+def check_threshold(label, dist, threshold=0.50):
+    for k, v in dist.items():
+        if v > threshold:
+            print(f" Warning: {label} '{k}' exceeds {threshold*100:.0f}% — check for unrealistic bias!")
+            return
+    print("Simulation is realsitic")
+ # 🟢 IMPORTANT LINE; Simulation Threshold is Checked
+check_threshold("Color", color_counts)
+check_threshold("Parity", parity_counts)
+check_threshold("Range", range_counts)
+Simulation is realsitic
+Simulation is realsitic
+Simulation is realsitic
+
+
+5. Accurate Color Assignment in Pie Charts
+
+Implemented

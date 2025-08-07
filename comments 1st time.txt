@@ -1,0 +1,16 @@
+ Checking the performance of the simulated roulette system:
+
+1️.Monitor outcome frequency:
+
+If the simulated roulette shows unusually high frequency for any single number, color (red/black), parity (even/odd), range (low/high), column, or dozen, this indicates unrealistic bias.
+
+In such cases, modify the simulation to impose limits or corrections to maintain realistic, fair distributions—just as real casinos ensure fairness through auditing and mechanical/algorithmic controls.
+
+2️.Betting policy restrictions:
+
+In real-world casinos, there are strict rules on bet progression systems and maximum betting limits to manage risk and prevent exploitation.
+
+Similarly, in the simulated environment, we will impose restrictions on betting policies—for example limiting bet doubling or progression to 10, 50, or 100 consecutive times.
+
+This simulates real casino behavior and ensures our reinforcement learning agent learns strategies within practical, realistic constraints.
+ and 3.He asked to check the complicates strategies like Martingale and fibonacci and D'Alemberts strategies of roulette

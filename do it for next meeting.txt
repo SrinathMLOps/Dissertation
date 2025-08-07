@@ -1,0 +1,2 @@
+Give the complicate starategy other than low betting, Martingale,Fibonacci and Keefer , DAlemberts
+For 100K simulaitons apply that Complex strategy

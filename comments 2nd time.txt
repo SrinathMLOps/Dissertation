@@ -1,0 +1,10 @@
+1.Average loss per betting amount may not have this much difference for this random agent and other fibonacci
+2.And there is no significant difference for random agent and other inthe average loss per spin
+
+3.Color distribution pie chat should show black color for black and red color for red and green color for green
+
+4.Instead of the threshold 55 percent it should be 50 percent and Chi squre test checking the biased roulette
+
+5.Already added the Maximum bet limit
+now we have to add the Maximum winning limit
+Now we have to add the the Maximum loss limit

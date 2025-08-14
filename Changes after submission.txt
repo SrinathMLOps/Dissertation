@@ -1,0 +1,14 @@
+Subject: Revised thesis submitted for final review
+Hello Sir,
+Thank you for your detailed feedback. I have implemented all the suggested changes:
+Replaced “Professor” with “Dr” where applicable.
+Added a concise description of European Roulette with a relevant single-zero wheel figures.
+Changed the terminology to “Fibonacci Strategy”, “Martingale Strategy”, “D’Alembert Strategy” throughout.
+Moved Project Management from Chapter 5 to Chapter 8 to improve flow.
+Ensured each chapter begins on a new page.
+Consolidated Tables 4–9 into a single table (page 31) for clarity.
+Updated all code snippets to Courier New and completed formatting.
+The updated files are available here:
+GitHub (code & notebooks): https://github.com/SrinathMLOps/Dissertation
+ OneDrive(finalDOCX/PDF & appendices): https://livecoventryac-my.sharepoint.com/:f:/r/personal/kaithojus_uni_coventry_ac_uk/Documents/Dissertation-main?csf=1&web=1&e=ZtYZdh
+Please confirm if I may proceed with the submission, or advise if any further changes are needed.Here I attached the document for quick referrence.
